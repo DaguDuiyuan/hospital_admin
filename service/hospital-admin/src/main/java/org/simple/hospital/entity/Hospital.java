@@ -3,6 +3,7 @@ package org.simple.hospital.entity;
 import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -37,4 +38,17 @@ public class Hospital implements Serializable {
 
     private LocalDateTime modifyTime;
 
+    @TableField(exist = false)
+    private String frpStatus = "unknown";
+
+    ///----------------------- 收钱吧参数 --------------------------
+    private String vendorSn; // 服务商序列号
+
+    private String vendorKey; // 服务商密钥
+
+    private String appId;
+
+    private String code;
+
+    ///----------------------- 收钱吧参数 --------------------------
 }

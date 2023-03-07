@@ -54,6 +54,11 @@ export default ({ mode }: ConfigEnv): UserConfig => {
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/center/, 'center'),
         }, 
+        '/hospitalApi': {
+          target: proxy[mode].host,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/hospitalApi/, 'hospitalApi'),
+        }, 
       },
     },
   };

@@ -14,6 +14,7 @@
         <module>simple-start</module>
         <module>simple-center</module>
         <module>hospital-admin</module>
+        <module>hospital-wx</module>
     </modules>
 
     <properties>

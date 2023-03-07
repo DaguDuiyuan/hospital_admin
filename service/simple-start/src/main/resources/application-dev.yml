@@ -111,3 +111,10 @@ mybatis-plus:
     db-config:
       id-type: auto
       select-strategy: not_empty
+
+
+system:
+  frp-config:
+    server-addr: 119.91.224.190
+    server-port: 12300
+    base-url: dagu233.icu
