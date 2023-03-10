@@ -35,7 +35,8 @@ public class GlobalResultHandler implements ResponseBodyAdvice<Object> {
     @Override
     public boolean supports(MethodParameter methodParameter, @Nonnull Class<? extends HttpMessageConverter<?>> aClass) {
         /* 排除swagger自带的内容 */
-        return !methodParameter.getDeclaringClass().getName().contains("springdoc");
+        if(methodParameter.getDeclaringClass().getName().contains("springdoc")) return false;
+        return !methodParameter.getDeclaringClass().getName().contains("org.simple.wx");
     }
 
     /**

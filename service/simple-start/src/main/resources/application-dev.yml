@@ -117,4 +117,4 @@ system:
   frp-config:
     server-addr: 119.91.224.190
     server-port: 12300
-    base-url: dagu233.icu
+    base-url: dagu233.icu:17000

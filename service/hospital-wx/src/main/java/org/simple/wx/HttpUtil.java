@@ -21,10 +21,16 @@ public class HttpUtil {
             .build();
 
     public Mapper request(HttpEntity entity) {
-        String fullUrl = String.format("%s.%s%s", entity.getFrpName(), baseUrl, entity.getUrl());
+        String fullUrl = String.format("http://%s.%s%s", entity.getFrpName(), baseUrl, entity.getUrl());
         SHttpTask task = frpHttp
                 .sync(fullUrl)
                 .addBodyPara(entity.getData());
+
+        if(entity.getMethod() == null) {
+            entity.setMethod(HttpMethods.GET);
+        }
+
+        Mapper mapper;
 
         if (entity.getMethod() == HttpMethods.GET) {
             return task.get().getBody().toMapper();

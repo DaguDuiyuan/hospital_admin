@@ -14,7 +14,7 @@ public class HttpEntity implements Serializable {
 
     private String frpName;
 
-    private HttpMethods method = HttpMethods.GET;
+    private HttpMethods method;
 
     private String url;
 
